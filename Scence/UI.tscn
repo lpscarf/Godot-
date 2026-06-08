@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://c0a07j3wd67o0"]
+
+[ext_resource type="Texture2D" uid="uid://bfktc0oydd3q6" path="res://Assets/Environments/SunnyLand/Props/palm.png" id="1_nwmit"]
+[ext_resource type="Texture2D" uid="uid://dffflarcfsf20" path="res://Assets/Environments/Rocky Tileset/Preview.png" id="2_dneul"]
+
+[node name="Ui" type="Control" unique_id=840170525]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1871717881]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -79.0
+offset_bottom = 176.0
+grow_horizontal = 0
+texture = ExtResource("1_nwmit")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=131198679]
+layout_mode = 1
+offset_left = -2.0
+offset_right = 77.0
+offset_bottom = 176.0
+texture = ExtResource("1_nwmit")
+
+[node name="Label" type="Label" parent="." unique_id=1170163560]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 191.0
+offset_right = 684.0
+offset_bottom = 349.0
+text = "开始游戏！"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1804916142]
+layout_mode = 0
+offset_left = 351.0
+offset_top = 334.0
+offset_right = 687.0
+offset_bottom = 526.0
+texture_normal = ExtResource("2_dneul")

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cpa4p7wt4p2bo"]
+
+[node name="Node2D" type="Node2D" unique_id=1144669862]
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1582107998]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CanvasModulate" type="CanvasModulate" parent="TextureButton" unique_id=216620870]
+
+[node name="Label" type="Label" parent="." unique_id=46309112]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "我是1号"

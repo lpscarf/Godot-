@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://j7x0yq77myy7"]
+
+[ext_resource type="Texture2D" uid="uid://u4pldsuslu6n" path="res://Assets/Characters/Players/Foxy/Sprites/hurt/player-hurt-1.png" id="1_7cpyd"]
+[ext_resource type="Texture2D" uid="uid://duwkl68fmgmcv" path="res://Assets/Characters/Players/Foxy/Sprites/idle/player-idle-1.png" id="1_b8es4"]
+[ext_resource type="Script" uid="uid://dxikerw844u3j" path="res://scripts/Player.cs" id="1_dkssp"]
+[ext_resource type="Texture2D" uid="uid://wy2vaq34m4y8" path="res://Assets/Characters/Players/Foxy/Sprites/idle/player-idle-2.png" id="2_berbn"]
+[ext_resource type="Texture2D" uid="uid://c7qsugq5dk60d" path="res://Assets/Characters/Players/Foxy/Sprites/hurt/player-hurt-2.png" id="2_dkssp"]
+[ext_resource type="Texture2D" uid="uid://bf4vc4apamhvu" path="res://Assets/Characters/Players/Foxy/Sprites/idle/player-idle-3.png" id="3_qphf1"]
+[ext_resource type="Texture2D" uid="uid://4wvn81eornac" path="res://Assets/Characters/Players/Foxy/Sprites/idle/player-idle-4.png" id="4_qno3y"]
+[ext_resource type="Texture2D" uid="uid://ccn1pvq5b2til" path="res://Assets/Characters/Players/Foxy/Sprites/jump/player-jump-1.png" id="5_uliq2"]
+[ext_resource type="Texture2D" uid="uid://d0wigvx10n1ap" path="res://Assets/Characters/Players/Foxy/Sprites/jump/player-jump-2.png" id="6_jebua"]
+[ext_resource type="Texture2D" uid="uid://bhebetfpojyar" path="res://Assets/Characters/Players/Foxy/Sprites/run/player-run-1.png" id="7_7cpyd"]
+[ext_resource type="Texture2D" uid="uid://df78r4somhrhl" path="res://Assets/Characters/Players/Foxy/Sprites/run/player-run-2.png" id="8_dkssp"]
+[ext_resource type="Texture2D" uid="uid://cmp53qkp3lwcu" path="res://Assets/Characters/Players/Foxy/Sprites/run/player-run-3.png" id="9_4cbnq"]
+[ext_resource type="Texture2D" uid="uid://cvyihlpa2h5w8" path="res://Assets/Characters/Players/Foxy/Sprites/run/player-run-4.png" id="10_g8imy"]
+[ext_resource type="Texture2D" uid="uid://cu171ktd5p2x3" path="res://Assets/Characters/Players/Foxy/Sprites/run/player-run-5.png" id="11_kavt4"]
+[ext_resource type="Texture2D" uid="uid://dnurstf5oaf23" path="res://Assets/Characters/Players/Foxy/Sprites/run/player-run-6.png" id="12_s3rpt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mf3jn"]
+radius = 12.0
+height = 24.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_usng5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7cpyd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dkssp")
+}],
+"loop": true,
+"name": &"Death",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_b8es4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_berbn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qphf1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qno3y")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_uliq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jebua")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_7cpyd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dkssp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4cbnq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_g8imy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_kavt4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_s3rpt")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 10.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=65722734]
+script = ExtResource("1_dkssp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=180359912]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_mf3jn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1361279385]
+position = Vector2(1, -6)
+sprite_frames = SubResource("SpriteFrames_usng5")
+animation = &"Run"
+autoplay = "Idle"
+frame_progress = 0.15444025
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=641671878]
+offset = Vector2(0, -41.325)
+zoom = Vector2(2.385, 2.385)

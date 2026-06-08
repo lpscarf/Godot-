@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://b47k5dg68xjtu"]
+
+[ext_resource type="Texture2D" uid="uid://bimgkv1oknyvs" path="res://icon.svg" id="1_ptifp"]
+[ext_resource type="Script" uid="uid://dthaeb3lp6enk" path="res://scripts/Scenelaean.cs" id="3_x43wd"]
+[ext_resource type="PackedScene" uid="uid://cawm6i6cvnx1e" path="res://Scence/Scene03.tscn" id="4_6khs5"]
+[ext_resource type="Script" uid="uid://bo6c6vlw2judq" path="res://scripts/NodElearn.cs" id="4_a6afq"]
+[ext_resource type="Script" uid="uid://dmo3e61fcgyp6" path="res://scripts/Vector2Learn.cs" id="5_8ix6q"]
+[ext_resource type="Script" uid="uid://c54rlot6bndk" path="res://scripts/Position.cs" id="6_77hb1"]
+
+[node name="Scene02" type="Node2D" unique_id=1343282917]
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=61985591]
+modulate = Color(0.94386876, 0.013999262, 0.44389072, 1)
+offset_left = 239.0
+offset_top = 90.0
+offset_right = 367.0
+offset_bottom = 218.0
+texture = ExtResource("1_ptifp")
+
+[node name="Node" type="Node" parent="TextureRect2" unique_id=2047496444]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2097701359]
+modulate = Color(0.94386876, 0.013999262, 0.44389072, 1)
+offset_left = 373.0
+offset_top = 93.0
+offset_right = 501.0
+offset_bottom = 221.0
+texture = ExtResource("1_ptifp")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1807948677]
+
+[node name="Input" type="Node2D" parent="." unique_id=250840723]
+
+[node name="NODElearn" type="Node2D" parent="." unique_id=1619368937 node_paths=PackedStringArray("inputNode", "newParent")]
+script = ExtResource("4_a6afq")
+inputNode = NodePath("..")
+newParent = NodePath("../Input")
+
+[node name="TextureRect" type="TextureRect" parent="NODElearn" unique_id=43965699]
+offset_left = 353.0
+offset_top = 271.0
+offset_right = 481.0
+offset_bottom = 399.0
+texture = ExtResource("1_ptifp")
+
+[node name="TextureRect4" type="TextureRect" parent="NODElearn/TextureRect" unique_id=796365886]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -207.0
+offset_top = -30.0
+offset_right = -79.0
+offset_bottom = 98.0
+texture = ExtResource("1_ptifp")
+
+[node name="Scenelearn" type="Node2D" parent="." unique_id=910233805]
+script = ExtResource("3_x43wd")
+otherScene = ExtResource("4_6khs5")
+
+[node name="Vector2learn" type="Node2D" parent="." unique_id=1060928985]
+script = ExtResource("5_8ix6q")
+
+[node name="Node2D2" type="Node2D" parent="." unique_id=2083135241]
+position = Vector2(300, 200)
+
+[node name="position" type="Node2D" parent="Node2D2" unique_id=855439786]
+script = ExtResource("6_77hb1")

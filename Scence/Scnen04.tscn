@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://cs72jax2vromf"]
+
+[ext_resource type="Script" uid="uid://s761dw7imebn" path="res://scripts/StaticBody2dlearn.cs" id="1_gp3r4"]
+[ext_resource type="Texture2D" uid="uid://dkwouht80yiav" path="res://Assets/Characters/Players/Foxy/Sprites/Dizzy/Dizzy1.png" id="2_b874q"]
+[ext_resource type="Script" uid="uid://c7rxgqphnno4p" path="res://scripts/Area2Dlearn.cs" id="3_c1amj"]
+[ext_resource type="Script" uid="uid://dlmaq2qv6l4fv" path="res://scripts/CharacterBody2dlearn.cs" id="4_b874q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0xmi"]
+size = Vector2(22, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgwg0"]
+size = Vector2(23, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gp3r4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b874q"]
+
+[node name="Scnen04" type="Node2D" unique_id=1885137718]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1957622662]
+position = Vector2(357, 508)
+scale = Vector2(26.985, 1.365)
+script = ExtResource("1_gp3r4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=188403506]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_m0xmi")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1320078101]
+texture_filter = 1
+position = Vector2(4, -2)
+texture = ExtResource("2_b874q")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=476408643]
+position = Vector2(4, 78)
+script = ExtResource("3_c1amj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=422973843]
+position = Vector2(128.5, 54)
+shape = SubResource("RectangleShape2D_jgwg0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=855003409]
+texture_filter = 1
+position = Vector2(131, 52)
+texture = ExtResource("2_b874q")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=93702176]
+position = Vector2(131, 57)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=983166062]
+shape = SubResource("RectangleShape2D_gp3r4")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=761571549]
+texture_filter = 1
+position = Vector2(4, -2)
+texture = ExtResource("2_b874q")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1676023463]
+position = Vector2(421, 189)
+script = ExtResource("4_b874q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=375542932]
+shape = SubResource("RectangleShape2D_b874q")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=261549050]
+texture_filter = 1
+position = Vector2(4, -2)
+texture = ExtResource("2_b874q")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="OnBodyEnter"]
